@@ -246,7 +246,7 @@ const Index = () => {
               >
                 Chapter 1 (Current)
               </Button>
-              <a href="http://localhost:8080" className="inline-block">
+              <a href="https://storyweb2.vercel.app" className="inline-block">
                 <Button 
                   variant="outline" 
                   size="lg" 
@@ -256,7 +256,7 @@ const Index = () => {
                   Chapter 2
                 </Button>
               </a>
-              <a href="http://localhost:8080/chapter3" className="inline-block">
+              <a href="https://storyweb2.vercel.app/chapter2" className="inline-block">
                 <Button 
                   variant="outline" 
                   size="lg" 
