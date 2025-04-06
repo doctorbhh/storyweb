@@ -1,0 +1,555 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+/* Eclipse theme colors */
+.bg-eclipse-dark {
+  background-color: #0c0b10;
+}
+
+.bg-eclipse-medium {
+  background-color: #1a1725;
+}
+
+.bg-eclipse-light {
+  background-color: #2a273e;
+}
+
+.bg-eclipse-accent {
+  background-color: #e74c3c;
+}
+
+.bg-eclipse-gold {
+  background-color: #e9b872;
+}
+
+.text-eclipse-gold {
+  color: #e9b872;
+}
+
+.text-eclipse-accent {
+  color: #e74c3c;
+}
+
+/* Background gradients */
+.bg-eclipse-gradient {
+  background: linear-gradient(to bottom, #0c0b10, #1a1725, #2a273e);
+}
+
+.bg-starry-sky {
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px, 20px 20px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Text shadows */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(233, 184, 114, 0.7), 0 0 20px rgba(233, 184, 114, 0.5);
+}
+
+/* Animation classes */
+.invisible-until-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.visible-on-scroll {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Basic animations */
+.animation-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animation-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animation-slide-left {
+  animation: slide-left 0.8s ease-out forwards;
+}
+
+.animation-slide-right {
+  animation: slide-right 0.8s ease-out forwards;
+}
+
+.animation-zoom-in {
+  animation: zoom-in 0.8s ease-out forwards;
+}
+
+.animation-reveal {
+  animation: reveal 0.8s ease-out forwards;
+}
+
+/* Story-themed animations */
+.animation-eclipse-reveal {
+  animation: eclipse-reveal 1.5s ease-out forwards;
+}
+
+.animation-flicker-in {
+  animation: flicker-in 2s forwards;
+}
+
+.animation-dream-fade {
+  animation: dream-fade 2s ease-out forwards;
+}
+
+.animation-heartbeat {
+  animation: heartbeat 1.5s ease-in-out forwards;
+}
+
+.animation-eclipse-pulse {
+  animation: eclipse-pulse 2s ease-in-out forwards;
+}
+
+.animation-parallax-reveal {
+  animation: parallax-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.animation-sequential-chars {
+  animation: sequential-chars 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.animation-float-in {
+  animation: float-in 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.animation-blur-fade {
+  animation: blur-fade 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Basic keyframes */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Story-themed animation keyframes */
+@keyframes eclipse-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    color: transparent;
+    text-shadow: 0 0 8px rgba(231, 76, 60, 0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    color: white;
+    text-shadow: 0 0 0 rgba(231, 76, 60, 0);
+  }
+}
+
+@keyframes flicker-in {
+  0%, 10%, 12%, 20%, 22%, 40%, 42% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  5%, 11%, 15%, 21%, 30%, 41%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dream-fade {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  20% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  40% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.03);
+  }
+  80% {
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes eclipse-pulse {
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
+}
+
+@keyframes parallax-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes sequential-chars {
+  0% {
+    opacity: 0;
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: normal;
+    filter: blur(0);
+  }
+}
+
+@keyframes float-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes blur-fade {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Animation for the eclipse */
+@keyframes moon-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px 5px rgba(231, 76, 60, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px 8px rgba(231, 76, 60, 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* New animations for story elements */
+@keyframes float-particle {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -15px);
+  }
+  50% {
+    transform: translate(-5px, 20px);
+  }
+  75% {
+    transform: translate(-15px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes eclipse-orbit {
+  0% {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+
+.animate-moon-glow {
+  animation: moon-glow 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-eclipse-pulse {
+  animation: eclipse-pulse 4s ease-in-out infinite;
+}
+
+/* Dream sequence styles */
+.dream-sequence {
+  position: relative;
+}
+
+.dream-sequence::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(42, 59, 102, 0.2) 0%, rgba(15, 11, 26, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floating-particle {
+  position: absolute;
+  animation: float-particle 20s ease-in-out infinite;
+}
+
+/* Eclipse sequence styles */
+.eclipse-sequence {
+  position: relative;
+}
+
+.eclipse-sequence::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 25%, rgba(196, 30, 58, 0.15) 0%, rgba(15, 11, 26, 0) 50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.eclipse-effect {
+  position: absolute;
+  z-index: 1;
+}
+
+.eclipse-orb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e74c3c 0%, #c41e3a 100%);
+  position: relative;
+  box-shadow: 0 0 30px 8px rgba(231, 76, 60, 0.6);
+}
+
+.eclipse-shadow {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: rgba(12, 11, 16, 0.8);
+  transform: translateX(-5px) translateY(-5px);
+  filter: blur(5px);
+}
+
+.eclipse-sparkle {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+}
+
+/* Text reveal animation for important words */
+.text-reveal {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.text-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #e74c3c, transparent);
+  animation: text-reveal-sweep 2s ease-in-out infinite;
+}
+
+@keyframes text-reveal-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  50%, 100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Parallax scrolling helper classes */
+.parallax-bg {
+  position: absolute;
+  height: 120%;
+  width: 100%;
+  top: -10%;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: -1;
+}
+
+/* Adding some debug styling to make text more visible */
+.prose p {
+  color: white !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.75 !important;
+}
+
+.story-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
