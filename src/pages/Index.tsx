@@ -294,7 +294,7 @@ const Index = () => {
               <Facebook className="h-6 w-6" />
             </a>
             <a 
-              href="https://www.instagram.com/_bharath.s?igsh=MXZkOWltZHZybGcxNQ==" 
+              href="https://www.instagram.com/__bharath_.s?igsh=MXZkOWltZHZybGcxNQ%3D%3D" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-eclipse-gold hover:text-eclipse-accent transition-colors duration-300"
